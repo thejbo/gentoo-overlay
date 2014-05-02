@@ -20,5 +20,3 @@ HOMEPAGE="http://msgpack.org/"
 LICENSE="MIT"
 SLOT="0"
 IUSE=""
-
-
