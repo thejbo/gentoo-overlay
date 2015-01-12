@@ -6,8 +6,8 @@
     <description><![CDATA[thejbo's overlay]]></description>
     <homepage>https://github.com/thejbo/gentoo-overlay</homepage>
     <owner type="person">
-      <email>dev@thejbo.kiev.ua</email>
-      <name><![CDATA[The jbo]]></name>
+      <email>josh@joshbowers.com</email>
+      <name><![CDATA[Josh Bowers]]></name>
     </owner>
     <source type="git">git://github.com/thejbo/gentoo-overlay.git</source>
     <source type="git">https://github.com/thejbo/gentoo-overlay.git</source>
