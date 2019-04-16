@@ -34,4 +34,5 @@ src_install() {
   cp -Rp * "${D}"
   newinitd "${FILESDIR}/${PN}.init.d" "${PN}"
   fowners ${PN}:${PN} /var/log/${PN}
+  fowners ${PN}:${PN} /var/lib/${PN}
 }
