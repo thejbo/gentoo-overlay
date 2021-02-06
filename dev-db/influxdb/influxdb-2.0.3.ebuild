@@ -33,7 +33,7 @@ src_unpack() {
 src_install() {
   cp -Rp * "${D}"
   newinitd "${FILESDIR}/${PN}.init.d" "${PN}"
-  cp "${FILESDIR}/${PN}.conf" "/etc/${PN}/${PN}.conf"
+  cp "${FILESDIR}/${PN}.yaml" "/etc/${PN}/${PN}.yaml"
   fowners ${PN}:${PN} /var/log/${PN}
   fowners ${PN}:${PN} /var/lib/${PN}
 }
