@@ -16,13 +16,11 @@ KEYWORDS="~amd64"
 IUSE=""
 RESTRICT="mirror"
 
-DEPEND=""
-RDEPEND="${DEPEND}"
-
-pkg_setup() {
-  enewgroup ${PN}
-  enewuser ${PN} -1 -1 "/var/lib/${PN}" ${PN}
-}
+COMMON_DEPEND="
+  acct-group/influxdb
+  acct-user/influxdb"
+DEPEND="${COMMON_DEPEND}"
+RDEPEND="${COMMON_DEPEND}"
 
 src_unpack() {
   mkdir -p ${WORKDIR}/${P}
