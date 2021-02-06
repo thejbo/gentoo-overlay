@@ -28,8 +28,6 @@ src_unpack() {
   mkdir -p ${WORKDIR}/${P}
   cd ${WORKDIR}/${P}
   unpack_deb ${A}
-  mkdir -p /var/log/${PN}
-  mkdir -p /var/lib/${PN}
 }
 
 src_install() {
