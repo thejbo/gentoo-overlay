@@ -11,13 +11,15 @@ depend() {
 start() {
     ebegin "Starting influxdb server"
 
+    export INFLUXD_CONFIG_PATH=/etc/influxdb/influxdb.yaml
+
     start-stop-daemon --start -b \
         --user influxdb:influxdb \
   --pidfile /run/influxdb.pid \
   --make-pidfile \
   --stdout /var/log/influxdb/influxd.log \
   --stderr /var/log/influxdb/influxd.log \
-  --exec /usr/bin/influxd -- -config /etc/influxdb/influxdb.conf
+  --exec /usr/bin/influxd
     eend $?
 }
 
