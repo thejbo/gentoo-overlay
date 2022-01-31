@@ -32,6 +32,6 @@ src_unpack() {
 
 src_install() {
   cp -Rp * "${D}"
-  systemd_dounit "${FILESDIR}/${PN}.service" "${PN}"
+  systemd_dounit "${FILESDIR}/${PN}.service"
   fowners ${PN}:${PN} /var/log/${PN}
 }
