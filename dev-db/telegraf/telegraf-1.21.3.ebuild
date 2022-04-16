@@ -32,6 +32,8 @@ src_unpack() {
 
 src_install() {
   cp -Rp * "${D}"
+  newconfd "${FILESDIR}/${PN}.confd" "${PN}"
+  newinitd "${FILESDIR}/${PN}.initd" "${PN}"
   systemd_dounit "${FILESDIR}/${PN}.service"
   fowners ${PN}:${PN} /var/log/${PN}
 }
