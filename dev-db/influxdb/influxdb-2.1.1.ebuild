@@ -33,8 +33,13 @@ src_unpack() {
 src_install() {
   cp -Rp * "${D}"
   mkdir /etc/${PN}/
+
+  systemd_dounit "${FILESDIR}/${PN}.service"
   newinitd "${FILESDIR}/${PN}.init.d" "${PN}"
+
+  cp "${FILESDIR}/influxd-systemd-start.sh" "/usr/lib/influxdb/scripts/influxd-systemd-start.sh"
   cp "${FILESDIR}/${PN}.yaml" "/etc/${PN}/${PN}.yaml"
+
   fowners ${PN}:${PN} /var/log/${PN}
   fowners ${PN}:${PN} /var/lib/${PN}
 }
