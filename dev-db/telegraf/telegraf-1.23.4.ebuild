@@ -8,7 +8,9 @@ inherit systemd user unpacker
 
 DESCRIPTION="A plugin-driven server agent for reporting metrics into InfluxDB"
 HOMEPAGE="http://influxdb.com"
-SRC_URI="https://dl.influxdata.com/telegraf/releases/${PN}_${PV}-1_${ARCH}.deb"
+SRC_URI="amd64? ( https://dl.influxdata.com/telegraf/releases/${PN}_${PV}-1_amd64.deb )
+arm64? ( https://dl.influxdata.com/telegraf/releases/${PN}_${PV}-1_arm64.deb )
+"
 
 LICENSE="MIT"
 SLOT="0"
