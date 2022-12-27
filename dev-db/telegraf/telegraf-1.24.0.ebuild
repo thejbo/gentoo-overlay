@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit systemd user unpacker
+inherit systemd unpacker
 
 DESCRIPTION="A plugin-driven server agent for reporting metrics into InfluxDB"
 HOMEPAGE="http://influxdb.com"

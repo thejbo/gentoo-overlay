@@ -4,15 +4,17 @@
 
 EAPI=6
 
-inherit user unpacker
+inherit systemd unpacker
 
 DESCRIPTION="A plugin-driven server agent for reporting metrics into InfluxDB"
 HOMEPAGE="http://influxdb.com"
-SRC_URI="https://dl.influxdata.com/telegraf/releases/${PN}_${PV}-1_amd64.deb"
+SRC_URI="amd64? ( https://dl.influxdata.com/telegraf/releases/${PN}_${PV}-1_amd64.deb )
+arm64? ( https://dl.influxdata.com/telegraf/releases/${PN}_${PV}-1_arm64.deb )
+"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE=""
 RESTRICT="mirror"
 
@@ -34,5 +36,6 @@ src_install() {
   cp -Rp * "${D}"
   newconfd "${FILESDIR}/${PN}.confd" "${PN}"
   newinitd "${FILESDIR}/${PN}.initd" "${PN}"
+  systemd_dounit "${FILESDIR}/${PN}.service"
   fowners ${PN}:${PN} /var/log/${PN}
 }
