@@ -4,11 +4,11 @@
 
 EAPI=6
 
-inherit user unpacker
+inherit unpacker
 
 DESCRIPTION="Scalable datastore for metrics, events, and real-time analytics"
 HOMEPAGE="http://influxdb.com"
-SRC_URI="https://dl.influxdata.com/influxdb/releases/${PN}2_${PV}_amd64.deb"
+SRC_URI="https://dl.influxdata.com/influxdb/releases/${PN}2-${PV}-amd64.deb"
 
 LICENSE="MIT"
 SLOT="0"
@@ -33,8 +33,13 @@ src_unpack() {
 src_install() {
   cp -Rp * "${D}"
   mkdir /etc/${PN}/
+
+  systemd_dounit "${FILESDIR}/${PN}.service"
   newinitd "${FILESDIR}/${PN}.init.d" "${PN}"
+
+  cp "${FILESDIR}/influxd-systemd-start.sh" "/usr/lib/influxdb/scripts/influxd-systemd-start.sh"
   cp "${FILESDIR}/${PN}.yaml" "/etc/${PN}/${PN}.yaml"
+
   fowners ${PN}:${PN} /var/log/${PN}
   fowners ${PN}:${PN} /var/lib/${PN}
 }

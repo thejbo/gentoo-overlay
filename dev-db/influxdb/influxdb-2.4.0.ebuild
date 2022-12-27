@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit user unpacker
+inherit unpacker
 
 DESCRIPTION="Scalable datastore for metrics, events, and real-time analytics"
 HOMEPAGE="http://influxdb.com"
