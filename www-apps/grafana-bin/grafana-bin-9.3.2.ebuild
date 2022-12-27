@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit systemd
+#inherit systemd
 
 MY_PN=${PN/-bin/}
 MY_PV=${PV/_beta/-beta}
