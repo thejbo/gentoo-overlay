@@ -1,0 +1,29 @@
+#!/sbin/openrc-run
+# Copyright 1999-2017 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Id$
+
+depend() {
+  need net
+  after bootmisc
+}
+
+start() {
+  ebegin "Starting AWS SSM Agent"
+
+  start-stop-daemon --start -b \
+    --user influxdb:influxdb \
+    --pidfile /run/aws-ssm-agent.pid \
+    --make-pidfile \
+    --exec /usr/bin/amazon-ssm-agent
+    eend $?
+}
+
+stop() {
+  ebegin "Stopping influxdb server"
+
+    start-stop-daemon --stop \
+      --pidfile /run/aws-ssm-agent.pid \
+      --exec /usr/bin/amazon-ssm-agent
+      eend $?
+}
