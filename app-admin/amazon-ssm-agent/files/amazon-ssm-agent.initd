@@ -12,7 +12,6 @@ start() {
   ebegin "Starting AWS SSM Agent"
 
   start-stop-daemon --start -b \
-    --user influxdb:influxdb \
     --pidfile /run/aws-ssm-agent.pid \
     --make-pidfile \
     --exec /usr/bin/amazon-ssm-agent
