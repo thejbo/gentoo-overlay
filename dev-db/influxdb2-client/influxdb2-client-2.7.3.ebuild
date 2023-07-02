@@ -24,5 +24,5 @@ src_unpack() {
 }
 
 src_install() {
-  cp "${S}/influxdb2-client-${PV}-linux-amd64/influx" "/usr/local/bin/"
+  cp "${S}/influx" "/usr/local/bin/"
 }
