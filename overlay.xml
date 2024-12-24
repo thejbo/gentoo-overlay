@@ -4,13 +4,12 @@
   <repo quality="experimental" status="unofficial">
     <name><![CDATA[thejbo]]></name>
     <description><![CDATA[thejbo's overlay]]></description>
-    <homepage>https://github.com/thejbo/gentoo-overlay</homepage>
+    <homepage>https://gitweb.joshbowers.com/thejbo/gentoo-overlay.git</homepage>
     <owner type="person">
       <email>josh@joshbowers.com</email>
       <name><![CDATA[Josh Bowers]]></name>
     </owner>
-    <source type="git">git://github.com/thejbo/gentoo-overlay.git</source>
-    <source type="git">https://github.com/thejbo/gentoo-overlay.git</source>
-    <feed>https://github.com/thejbo/gentoo-overlay/commits/master.atom</feed>
+    <source type="git">https://gitweb.joshbowers.com/thejbo/gentoo-overlay.git.git</source>
+    <feed>https://gitweb.joshbowers.com/thejbo/gentoo-overlay.git/commits/master.atom</feed>
   </repo>
 </repositories>
